@@ -1,0 +1,71 @@
+---
+title: Blogdown notes
+author: Tzuying Yu
+date: '2021-05-30'
+slug: blogdown-notes
+categories:
+  - blogdown
+  - R
+tags:
+  - R Markdown
+---
+This is the notes of what I learned about the blogdown today.
+
+# The process of building a blogdown website
+1. Go to File > New project > New directory > Website using blogdown > Create website. For this step, it generates a new directory that contains serveal files and folders. The general directory structure is:
+* content/ 
+  - about.md
+  - post/ (where you put all your rmarkdown post here)
+* static/ 
+  - Question: what is it used for?
+* themes/ 
+  - the theme is pre-selected in the first step (Question: how to change the theme if already created the website?)
+  - Go to https://themes.gohugo.io/ for more theme templates
+* public/ 
+  - For my experience, it don't generate automatically after use the blogdown::serve_site(). So go to the top left panel > Build > Build Website. Then, it will generate the public/ folder for you.
+  - Question: what is it used for?
+* R/
+  - Question: what is it used for?
+* resources/
+  - Question: what is it used for?
+* config.yaml: Hugo and theme configuration file.
+* .Rprofile: File to set up your blogdown options.
+* netlify.toml: File to set up your Netlify options.
+
+# How to preview the site locally 
+1. Use the Addins > Serve site.
+2. Console > blogdown::serve_site().
+Serving the site did the following:
+- Started a local Hugo server to help you preview your website, and
+- Knitted .Rmd post to an .html page. 
+
+# When doubt, run blogdown::check_site() in console
+You will see what files were checked, which checks were successful, and blogdown will offer [TODO] items when a check needs your attention
+
+# configure site: the config.yaml
+The config.yaml file stores your website configurations for Hugo and for your Hugo theme. You will usually only edit this file during the initial site setup.
+
+# Addins
+1. Serve site
+- where you can preview site (mentioned above)
+2. New post
+- After filling the basic info about the new post, it will automatically generate a new folder under post/
+3. Update metadata
+- Metadata is the ymal in rmarkdown, the category and tags.
+- This addin allows you to update the YAML metadata of the currently opened post.
+4. Insert images
+- This addin allows you to insert any image in your computer to your currently opened post. The following the example.
+
+# Global options
+The global options are stored in the .Rprofile in the root directory.
+1. blogdown.hugo.version
+- A Hugo version number -> (Default) A valid Hugo version	
+- A common mistake when specifying this option is to omit the version number 0 at the end. For example, only Hugo v0.55.0 exists, but not v0.55, so options(blogdown.hugo.version = '0.55') will not work, and you must set it to 0.55.0 precisely.
+2. blogdown.knit.on_save
+- Knit Rmd files automatically on save? -> (Default) TRUE
+3. blogdown.method	
+- The output format of .Rmd posts -> (Default) 
+![Summer sugar beach](images/IMG_0885.JPG){width=50%}
+4. blogdown.serve_site.startup
+- Serve the site on RStudio startup? -> (Default) FALSE
+

@@ -1,0 +1,61 @@
+---
+title: Blogdown notes
+author: Tzuying Yu
+date: '2021-05-30'
+slug: blogdown-notes
+categories:
+  - blogdown
+  - R
+tags:
+  - R Markdown
+---
+
+
+
+<p>This is the notes of what I learned about the blogdown today.</p>
+<div id="the-process-of-building-a-blogdown-website" class="section level1">
+<h1>The process of building a blogdown website</h1>
+<ol style="list-style-type: decimal">
+<li>Go to File &gt; New project &gt; New directory &gt; Website using blogdown &gt; Create website. For this step, it generates a new directory that contains serveal files and folders. The general directory structure is:</li>
+</ol>
+<ul>
+<li>/content
+<ul>
+<li>about.md</li>
+<li>/post (where you put all your rmarkdown post here)</li>
+</ul></li>
+<li>/static</li>
+<li>/themes
+<ul>
+<li>the theme is pre-selected in the first step (Question: how to change the theme if already created the website?)</li>
+<li>Go to <a href="https://themes.gohugo.io/" class="uri">https://themes.gohugo.io/</a> for more theme templates</li>
+</ul></li>
+<li>/public
+<ul>
+<li>For my experience, it don’t generate automatically after use the blogdown::serve_site(). So go to the top left panel &gt; Build &gt; Build Website. Then, it will generate the /public folder for you.</li>
+<li>Question: what is it used for?</li>
+</ul></li>
+<li>/R
+<ul>
+<li>Question: what is it used for?</li>
+</ul></li>
+<li>/resources
+<ul>
+<li>Question: what is it used for?</li>
+</ul></li>
+<li>config.yaml: Hugo and theme configuration file.</li>
+<li>.Rprofile: File to set up your blogdown options.</li>
+<li>netlify.toml: File to set up your Netlify options.</li>
+</ul>
+</div>
+<div id="how-to-preview-the-site-locally" class="section level1">
+<h1>How to preview the site locally</h1>
+<ol style="list-style-type: decimal">
+<li>Use the Addins &gt; Serve site.</li>
+<li>Console &gt; blogdown::serve_site().</li>
+</ol>
+<div class="figure">
+<img src="images/IMG_0885.JPG" style="width:50.0%" alt="" />
+<p class="caption">Summer sugar beach</p>
+</div>
+</div>
